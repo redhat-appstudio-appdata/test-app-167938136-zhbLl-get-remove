@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: go-167938140
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-167938140
+    app.kubernetes.io/part-of: test-app-167938136
+  name: go-167938140
+  namespace: skhileri-tenant
+spec:
+  ports:
+  - port: 8081
+    targetPort: 8081
+  selector:
+    app.kubernetes.io/instance: go-167938140
+status:
+  loadBalancer: {}

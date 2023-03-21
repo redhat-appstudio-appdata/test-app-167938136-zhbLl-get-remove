@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: go-167938140
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-167938140
+    app.kubernetes.io/part-of: test-app-167938136
+  name: go-167938140
+  namespace: skhileri-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-app
+      app.kubernetes.io/instance: go-167938140
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: go-app
+        app.kubernetes.io/instance: go-167938140
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:zhbLl-go-167938140
+        name: my-go
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+status: {}
